@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="LoginMapper">
+
+	<!-- 获取登录界面Banner图片列表 -->
+	<select id="getLoginImgList" resultType="com.map.platform.system.base.bean.WebImg" parameterType="java.lang.String">
+		SELECT 
+		id,title,img_addr,link_addr,img_type,img_index,create_time,creator
+		FROM t_web_img 
+		WHERE img_type = #{imgType}
+		order by img_index
+	</select>
+	
+	<!-- 获取登录界面重要公告列表 -->
+	<select id="getLoginNewsList" resultType="com.map.platform.system.base.bean.WebNews" parameterType="java.util.Map">
+		SELECT 
+		id,title,content,author,news_addr,is_login_news,grade_login_news,create_time,creator
+		FROM t_web_news 
+		WHERE is_login_news = #{isLoginNews}
+		order by grade_login_news desc,create_time desc
+		limit #{size}
+	</select>
+	
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>JSTL 1.1 functions library</description>
+  <display-name>JSTL functions</display-name>
+  <!-- 版本号 -->
+  <tlib-version>1.1</tlib-version>
+  <!-- 名称(必须) -->
+  <short-name>permission</short-name>
+  <!-- uri(必须) jstl要在页面中的引用jstl的uri就是这里的-->
+  <uri>http://guosw.com/jsp/jstl/functions</uri>
+ 
+ <!-- 对应我们建立的类 -->
+ <function>
+    <!-- 类中的方法 -->
+    <name>check</name>
+    <!-- 类路径 -->
+    <function-class>com.map.platform.commons.utils.tld.PermissionFunction</function-class>
+    <!-- 返回的数据类型（一定是java.util.***）和方法名称 -->
+    <function-signature>java.lang.Boolean check(java.lang.String)</function-signature>
+  </function>
+ <function>
+    <name>format</name>
+    <function-class>com.qdonepay.manager.utils.tld.PermissionFunction</function-class>
+    <function-signature>java.lang.String format(java.lang.String)</function-signature>
+  </function>
+</taglib>
